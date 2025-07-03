@@ -1,9 +1,8 @@
 import flask
-import datetime
 import dotenv
 import os
 
-app = flask.Flask(__name__)
+app = flask.Flask(__name__, template_folder=os.getcwd() + "/templates", static_folder=os.getcwd() + "/static")
 
 dotenv.load_dotenv(".env")
 PORT = os.getenv("PORT", None)
@@ -14,7 +13,7 @@ if PORT is None:
 
 @app.get("/")
 def main():
-    return "Hello World!\n" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 200
+    return flask.render_template("main.html")
 
 
 if __name__ == "__main__":
