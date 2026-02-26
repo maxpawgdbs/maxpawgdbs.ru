@@ -1,185 +1,156 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Максим Тараненко | maxpawgdbs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>maxpawgdbs</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Rubik', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+    :root{
+      --bg: #ffffff;
+      --text: #1f2328;
+      --muted: #59636e;
+      --border: #d0d7de;
+      --link: #0969da;
+      --codebg:#f6f8fa;
     }
 
-    .container {
-      max-width: 1100px;
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.5;
+    }
+
+    .wrap{
+      max-width: 920px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 32px 16px 64px;
     }
 
-    .profile {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    .card{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding: 20px 20px;
+      background:#fff;
     }
 
-    .profile img {
-      width: 240px;
-      height: 240px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-right: 40px;
+    .top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
     }
 
-    .info h1 {
-      margin-top: 0;
-      font-size: 36px;
+    h1{
+      font-size: 22px;
+      margin:0;
+      font-weight:600;
     }
 
-    .info h3, .info h5 {
-      margin: 8px 0;
-      font-weight: normal;
+    .sub{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:14px;
     }
 
-    .contacts {
-      display: flex;
-      gap: 15px;
-      margin: 10px 0 30px;
+    a{ color:var(--link); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    hr{
+      border:0;
+      border-top:1px solid var(--border);
+      margin: 18px 0;
     }
 
-    .contacts img {
-      width: 40px;
-      height: 40px;
-      transition: transform 0.2s;
+    h2{
+      font-size:16px;
+      margin:0 0 10px 0;
+      font-weight:600;
     }
 
-    .contacts a:hover img {
-      transform: scale(1.1);
+    ul{
+      margin:0;
+      padding-left: 18px;
     }
+    li{ margin: 6px 0; }
 
-    h2 {
-      margin-top: 40px;
-      font-size: 26px;
-      color: #222;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-      columns: 2;
+    .pillrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
       margin-top: 10px;
     }
-
-    ul li {
-      margin-bottom: 6px;
+    .pill{
+      border:1px solid var(--border);
+      background: var(--codebg);
+      color: var(--text);
+      padding: 4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
 
-    .projects h3 {
-      margin: 10px 0;
-      font-weight: normal;
+    .footer{
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 12px;
     }
 
-    .projects a {
-      color: #0077cc;
-      text-decoration: none;
-      transition: color 0.2s;
+    /* make it feel like markdown block */
+    .md{
+      font-size:14px;
     }
 
-    .projects a:hover {
-      color: #005fa3;
-    }
-
-    @media (max-width: 768px) {
-      .profile {
-        flex-direction: column;
-        text-align: center;
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0d1117;
+        --text:#e6edf3;
+        --muted:#8d96a0;
+        --border:#30363d;
+        --link:#2f81f7;
+        --codebg:#161b22;
       }
-
-      .profile img {
-        margin: 0 0 20px;
-      }
-
-      ul {
-        columns: 1;
-      }
-
-      .contacts {
-        justify-content: center;
-      }
+      .card{ background:#0d1117; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="profile">
-      <img src="static/умный-человек-в-очках-и-галстуке.jpg" alt="Фото">
-      <div class="info">
-        <h1>Привет!</h1>
-        <h3>Я — Максим Тараненко</h3>
-        <h3>11 класс, Белгородская область</h3>
-        <h3>Программирую с октября 2022</h3>
-        <h3>Участник CTF-команды <a href="https://ctftime.org/team/365955">Xorg-worship</a></h3>
-
-        <h3>Контакты:</h3>
-        <div class="contacts">
-          <a href="https://github.com/maxpawgdbs" target="_blank"><img src="static/github-mark.png" alt="GitHub"></a>
-          <a href="https://t.me/maxpawgdbs" target="_blank"><img src="static/Telegram_logo.svg.webp" alt="Telegram"></a>
-          <a href="https://ctftime.org/user/229859" target="_blank"><img src="static/ctftime.png" alt="CTFTime"></a>
+  <main class="wrap">
+    <section class="card md">
+      <div class="top">
+        <div>
+          <h1>maxpawgdbs</h1>
+          <div class="sub">Links & projects</div>
         </div>
       </div>
-    </div>
 
-    <h2>Знаю технологии:</h2>
-    <ul>
-      <li>Python</li>
-      <li>PyQt5</li>
-      <li>Pygame</li>
-      <li>Flask</li>
-      <li>Django</li>
-      <li>SQLite3</li>
-      <li>PyTorch</li>
-      <li>HTML, CSS, JS</li>
-      <li>C++</li>
-      <li>Golang</li>
-      <li>C#</li>
-      <li>Unity</li>
-      <li>OpenGL</li>
-    </ul>
+      <hr />
 
-    <h2>Достижения:</h2>
-    <h3>Летняя ИТ-Школа Белгородской области — 2023, 2024, 2025</h3>
-    <h3>Призёр регионального этапа ВСОШ по информатике 2024–2025</h3>
-    <h5>292 балла</h5>
-    <h3>Курс "Основы промышленного программирования" — с отличием</h3>
-    <h5>Сертификат № 2302 196470 Тараненко</h5>
-    <h3>Курс Django от Яндекс Лицея — 5 место по рейтингу</h3>
-    <h5>Сертификат № 2487 196470 Тараненко</h5>
-    <h3>Курс по Golang от Яндекс лицея</h3>
-    <h5>Сертификат № 2510 196470 Тараненко</h5>
-    <h3><a href="https://vk.com/wall-73850005_18558">Проводили свою CTF в Летней ИТ Школе Белгородская область</a></h3>
-    <h3>Выиграл много мерча от Яндекса: сумка, шопер, рюкзак, колонку и т.д.</h3>
-    <h3>Принимал участие в <a href="https://github.com/nais2008/bezumhack">BezumHack</a></h3>
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://codeforces.com/profile/rabotai-rodnenki-chatgbt" target="_blank" rel="noreferrer">Codeforces</a></li>
+        <li><a href="https://ctftime.org/team/365955" target="_blank" rel="noreferrer">CTF Team</a></li>
+        <li><a href="https://github.com/maxpawgdbs" target="_blank" rel="noreferrer">GitHub</a></li>
+      </ul>
 
-    <h2>Проекты:</h2>
-    <div class="projects">
-      <h3><a href="https://github.com/maxpawgdbs/SCTB">System of Control Telegram Bot</a></h3>
-      <h3><a href="https://github.com/maxpawgdbs/project-pygame">Игра на Pygame</a></h3>
-      <h3><a href="https://github.com/maxpawgdbs/project-flask">Сайт с музыкой</a></h3>
-      <h3><a href="https://github.com/maxpawgdbs/yandex-django">Django-проект с курса</a></h3>
-      <h3><a href="https://github.com/maxpawgdbs/kanhub">KanHub</a></h3>
-      <h3><a href="https://github.com/Remziz/Valley-of-Future">Valley Of Future</a></h3>
-      <h3><a href="https://github.com/maxpawgdbs/yandex-go">Калькулятор на Golang</a></h3>
-      <h3><a href="https://github.com/maxpawgdbs/no-module-heural-network">Нейросеть на чистом Python</a></h3>
-      <h3><a href="https://github.com/maxpawgdbs/pseudo-3d">Попытки в 3D-графику</a></h3>
-      <h3><a href="https://github.com/maxpawgdbs/maxpawgdbs.ru">maxpawgdbs.ru</a></h3>
-      <h3><a href="https://github.com/maxpawgdbs/spm.maxpawgdbs.ru">spm.maxpawgdbs.ru</a></h3>
-    </div>
-  </div>
+      <hr />
+
+      <h2>My Projects</h2>
+      <ul>
+        <li><a href="https://github.com/maxpawgdbs/SCTB" target="_blank" rel="noreferrer">System of Control Telegram Bot</a></li>
+        <li><a href="https://github.com/maxpawgdbs/kanhub" target="_blank" rel="noreferrer">KanHub</a></li>
+        <li><a href="https://github.com/Remziz/Valley-of-Future" target="_blank" rel="noreferrer">Valley Of Future</a></li>
+        <li><a href="https://github.com/maxpawgdbs/no-module-heural-network" target="_blank" rel="noreferrer">Neural Network in Pure Python</a></li>
+        <li><a href="https://github.com/maxpawgdbs/pseudo-3d" target="_blank" rel="noreferrer">Pseudo 3D on OpenGL (C++)</a></li>
+        <li><a href="https://github.com/maxpawgdbs/3d-opengl-0" target="_blank" rel="noreferrer">3D on OpenGL (C++)</a></li>
+        <li><a href="https://github.com/maxpawgdbs/llm-it-school" target="_blank" rel="noreferrer">Chatbot for Data Analysis Based on an LLM</a></li>
+        <li><a href="https://github.com/lyubovchubarova/SiriusAgentBrowser" target="_blank" rel="noreferrer">Browser Agent Based on an LLM and VLM</a></li>
+        <li><a href="https://github.com/maxpawgdbs/write-ups" target="_blank" rel="noreferrer">Sometimes I Write CTF Challenge Write-ups</a></li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
